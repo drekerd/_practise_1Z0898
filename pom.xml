@@ -16,6 +16,10 @@
     </properties>
     <modules>
         <module>mod2</module>
+        <module>enums</module>
+        <module>streamsInAndOut</module>
+        <module>labs81</module>
+        <module>labs10</module>
     </modules>
 
     <dependencyManagement>

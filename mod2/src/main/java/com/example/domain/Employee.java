@@ -7,8 +7,16 @@ import lombok.Setter;
 @Data
 public class Employee {
 
+    public Employee(){
+
+    }
+
     public Employee(int empId, String empName, String empSSN, double empSalary) {
 
+        this.employeeId=empId;
+        this.employeeName = empName;
+        this.employeeSocialSecurityNumber = empSSN;
+        this.employeeSalary= empSalary;
 
     }
 
@@ -25,15 +33,18 @@ public class Employee {
 
     public double raiseSalary(double increase){
 
+        this.employeeSalary = employeeSalary+increase;
         return increase;
     }
 
-    public void printEmployee(double increase){
-
-        System.out.println("Employee ID: "+ employeeId+"\n"+
-                        "Employee Name: "+ employeeSocialSecurityNumber+"\n"+
-                        "Employee SSN: "+ employeeSocialSecurityNumber+"\n"+
-                        "Employee Salary: "+ employeeSalary);
+    @Override
+    public String toString() {
+        return "Employee" +
+                "employeeId=" + employeeId +
+                ", employeeSocialSecurityNumber='" + employeeSocialSecurityNumber + '\'' +
+                ", employeeSalary=" + employeeSalary +
+                ", employeeName='" + employeeName + '\'';
     }
+
 
 }
