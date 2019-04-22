@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import com.example.domain.*;
 import org.junit.Assert;
+=======
+import com.example.domain.Employee;
+>>>>>>> 055ad6815707a7fa6d5a54983575cb48d47257db
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -18,6 +22,7 @@ public class EmployeeTest {
 
     }
     @Test
+<<<<<<< HEAD
     public void testManger(){
         Manager manager = new Manager(
                 207,
@@ -40,6 +45,47 @@ public class EmployeeTest {
 
         String newString = admin.toString();
         System.out.println(newString);
+=======
+    public void compareObjectsItself_True() {
+        Employee employee = new Employee.EmployeeBuilder().setEmployeeName("Mário")
+                                                .setId(20)
+                                                .setEmployeeSalary(1000.00)
+                                                .setEmployeeSocialSecurityNumber("cenas")
+                                                .build();
+
+        Employee expectedEmployee = new Employee.EmployeeBuilder().setEmployeeName("Mário")
+                .setId(20)
+                .setEmployeeSalary(1000.00)
+                .setEmployeeSocialSecurityNumber("cenas")
+                .build();
+
+        assertThat(employee).isEqualTo(expectedEmployee);
+    }
+
+    @Test
+    public void compareObjectWithGetters(){
+
+        Employee employee = new Employee.EmployeeBuilder()
+                .setEmployeeName("Mário")
+                .setId(20)
+                .setEmployeeSalary(1000.00)
+                .setEmployeeSocialSecurityNumber("cenas")
+                .build();
+
+        Employee expectedEmployee = new Employee.EmployeeBuilder()
+                                                .setEmployeeName(employee.getEmployeeName())
+                                                .setId(employee.getEmployeeId())
+                                                .setEmployeeSalary(employee.getEmployeeSalary())
+                                                .setEmployeeSocialSecurityNumber(employee.getEmployeeSocialSecurityNumber())
+                                                .build();
+
+
+        assertThat(employee).isEqualTo(expectedEmployee);
+    }
+    /*@Test
+    public void returnEmployeeName_True() {
+        Assert.assertEquals("Jane Smith", employee.getEmployeeName());
+>>>>>>> 055ad6815707a7fa6d5a54983575cb48d47257db
     }
 
     @Test
@@ -59,6 +105,7 @@ public class EmployeeTest {
     }
 
     @Test
+<<<<<<< HEAD
     public void testDirectorEmployee(){
         Employee director = new Director(
                 12,
@@ -91,6 +138,10 @@ public class EmployeeTest {
         //verify(spyEmplyee.getEmployeeName().equals("Mario"));
 
 
+=======
+    public void returnEmployeeSalary_Truee() {
+        Assert.assertEquals(120_345.27, employee.getEmployeeSalary(),1);
+>>>>>>> 055ad6815707a7fa6d5a54983575cb48d47257db
     }*/
 
 }

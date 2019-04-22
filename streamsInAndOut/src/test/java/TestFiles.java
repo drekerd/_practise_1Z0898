@@ -75,10 +75,15 @@ public class TestFiles {
     @Test
     public void TestCopy(){
 
-        String originalFilePath = "/home/mariosilva/Documents/Original.txt";
-        String copyFilePath = "/home/mariosilva/Documents/CenasCopy.txt";
+        String originalFilePath = "/home/mariosilva/IdeaProjects/_1z0898/streamsInAndOut/src/OriginalFile.txt";
+        String copyFilePath = "/home/mariosilva/IdeaProjects/_1z0898/streamsInAndOut/src/CenasCopy.txt";
         String file1Firstline = null;
         String file2Firstline = null;
+        File checkifFileExist = new File (copyFilePath);
+
+        if(checkifFileExist.exists()){
+            checkifFileExist.delete();
+        }
 
         FileService copyToFile = new FileService();
         copyToFile.copyFile(originalFilePath,copyFilePath);
@@ -97,6 +102,8 @@ public class TestFiles {
 
 
         Assert.assertEquals(file1Firstline,file2Firstline);
+        System.out.println(file1Firstline + " and " + file2Firstline);
+
 
     }
 

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import com.sun.tools.corba.se.idl.StringGen;
+>>>>>>> 055ad6815707a7fa6d5a54983575cb48d47257db
 import org.omg.CORBA.PRIVATE_MEMBER;
 
 public enum Color {
